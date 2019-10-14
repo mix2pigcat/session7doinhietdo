@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+nhap gia tri(C) : <input type="text" id="out" onchange="getData()" />
+Độ K: <input type="text" id="k" disabled/>
+Độ F: <input type="text" id="f" disabled/>
+<script>
+    function getData() {
+        var out = parseInt(document.getElementById('out').value);
+        if(out < -273){
+            alert("ban hay nhap lai.")
+        }else{
+            let result = new Temperature();
+            let a = result.getConvertCK(out);
+            let b = result.getConvertCF(out);
+            document.getElementById('k').value = a;
+            document.getElementById('f').value = b;
+        }
+    }
+    function Temperature() {
+        this.getConvertCK = function (a) {
+            let resultck = a + 273.15;
+            return resultck;
+        };
+        this.getConvertCF = function (a) {
+            resultcf = a * 1.8 + 32;
+            return resultcf
+        };
+    }
+
+</script>
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>
